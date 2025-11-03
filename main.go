@@ -12,7 +12,8 @@ func main() {
 	if port == "" {
 		port = "5000"
 	}
-	router := gin.Default()
+	router := gin.New()
+	router.Use(gin.Logger())
 
 	routes.AuthRoutes(router)
 	routes.UserRoutes(router)
